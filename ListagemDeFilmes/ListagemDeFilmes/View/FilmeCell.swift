@@ -8,13 +8,23 @@
 
 import UIKit
 
-class CharacterViewTableCell: UITableViewCell {
+class FilmeCell: UITableViewCell {
    
+    @IBOutlet weak var lblTitle:UILabel!
+    @IBOutlet weak var lblRating:UILabel!
+    @IBOutlet weak var lblOverview:UILabel!
+    @IBOutlet weak var lblYear:UILabel!
+    @IBOutlet weak var imgPoster:UIImageView!
+    
     var filmeViewModel: FilmeViewModel!
     {
         didSet
         {
-            textLabel?.text = filmeViewModel.nome
+            lblTitle?.text = filmeViewModel.titulo
+            lblRating?.text = filmeViewModel.rating
+            lblOverview?.text = filmeViewModel.overview
+            lblYear?.text = filmeViewModel.ano
+            imgPoster?.image = filmeViewModel.image
             
         }
         
