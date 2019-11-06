@@ -16,22 +16,33 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text=" Top Movies" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qYy-oU-WlX">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" Top Movies" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qYy-oU-WlX">
                                 <rect key="frame" x="0.0" y="44" width="414" height="61"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="61" id="ryc-vv-Tuc"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="50"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Pau-gj-WPR">
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pau-gj-WPR">
                                 <rect key="frame" x="0.0" y="134" width="414" height="762"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <color key="backgroundColor" red="0.1085321872" green="0.2436245142" blue="0.09605531045" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <segue destination="YGs-xk-i5U" kind="embed" identifier="FilmesTableSegue" id="JLd-SQ-kY2"/>
                                 </connections>
                             </containerView>
                         </subviews>
                         <color key="backgroundColor" red="0.13836751463262803" green="0.23856460492227982" blue="0.1614890843803149" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="qYy-oU-WlX" firstAttribute="trailing" secondItem="Pau-gj-WPR" secondAttribute="trailing" id="1DA-9f-CaZ"/>
+                            <constraint firstItem="qYy-oU-WlX" firstAttribute="leading" secondItem="Pau-gj-WPR" secondAttribute="leading" id="F5X-QT-gdJ"/>
+                            <constraint firstItem="qYy-oU-WlX" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="F95-0T-4di"/>
+                            <constraint firstItem="qYy-oU-WlX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="FJA-Mc-h3N"/>
+                            <constraint firstItem="Pau-gj-WPR" firstAttribute="top" secondItem="qYy-oU-WlX" secondAttribute="bottom" constant="29" id="Scg-x6-OfY"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="Pau-gj-WPR" secondAttribute="bottom" constant="-34" id="a5L-zq-7pF"/>
+                            <constraint firstItem="qYy-oU-WlX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="apt-Jf-two"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
@@ -46,8 +57,8 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="9Le-W5-Maw">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="762"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <color key="sectionIndexBackgroundColor" red="0.1085321872" green="0.2436245142" blue="0.09605531045" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.13836751459999999" green="0.2385646049" blue="0.16148908440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="sectionIndexBackgroundColor" red="0.13836751459999999" green="0.2385646049" blue="0.16148908440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FilmeCell" rowHeight="172" id="h9c-nH-Rub" customClass="FilmeCell" customModule="ListagemDeFilmes" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="172"/>
@@ -61,10 +72,21 @@
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kAA-pB-RR9">
                                                     <rect key="frame" x="13" y="10" width="83" height="122"/>
+                                                    <color key="backgroundColor" red="0.1334944535" green="0.5" blue="0.1180925246" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="tintColor" red="0.1334944535" green="0.5" blue="0.1180925246" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="116" id="2kX-Ns-1Ie"/>
                                                         <constraint firstAttribute="width" constant="83" id="jrh-Jf-DiV"/>
                                                     </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                                            <integer key="value" value="2"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="10"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rate" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0xh-Kh-EIx">
                                                     <rect key="frame" x="345" y="10" width="44" height="20.5"/>

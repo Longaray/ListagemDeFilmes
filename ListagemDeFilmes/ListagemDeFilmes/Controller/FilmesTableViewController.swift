@@ -36,7 +36,7 @@ class FilmesTableViewController : UITableViewController
         let backgroundView = UIView()
         backgroundView.backgroundColor = UIColor.darkGray
         cell.selectedBackgroundView = backgroundView
-       
+        cell.imgPoster.layer.borderColor = UIColor.green.cgColor
        return cell
    }
     
