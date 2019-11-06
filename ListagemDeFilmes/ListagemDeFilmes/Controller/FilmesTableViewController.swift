@@ -32,6 +32,10 @@ class FilmesTableViewController : UITableViewController
         let cell = tableView.dequeueReusableCell(withIdentifier: "FilmeCell") as! FilmeCell
         let filmesViewModel = self.filmesViewModels[indexPath.row]
         cell.filmeViewModel = filmesViewModel
+        
+        let backgroundView = UIView()
+        backgroundView.backgroundColor = UIColor.darkGray
+        cell.selectedBackgroundView = backgroundView
        
        return cell
    }

@@ -20,8 +20,16 @@ struct FilmeViewModel
     init(filme: Filme)
     {
         self.titulo = filme.title ?? ""
-        self.rating = String(format: "%.2f", filme.vote_average)
-        self.ano = filme.release_date ?? ""
+        self.rating = String(format: "%.1f", filme.vote_average)
+        //var stringAno = ""
+        if let stringAno = filme.release_date
+        {
+            self.ano = String((stringAno.split(separator: "-"))[0])
+        }
+        else
+        {
+            self.ano = ""
+        }
         self.overview = filme.overview ?? ""
         
         //TODO find path
