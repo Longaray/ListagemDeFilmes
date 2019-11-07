@@ -19,7 +19,31 @@ class Service: NSObject {
     
     //func  header
     //Retrive Filmes
-    func getFilmes(/*offset:String ,*/ completionHandler: @escaping ([Filme]?,Error?) -> Void)
+    func getFilmes(page:String, completionHandler: @escaping ([Filme]?,Error?) -> Void)
+    {
+        
+        let parameters = [
+            "api_key"   : apiKey,
+            "language"  : "en-US",
+            "page"      : page
+        ]
+        
+        Alamofire.request(urlFilmes, method: .get, parameters: parameters).responseJSON { (responseData) -> Void in
+            if((responseData.result.value) != nil) {
+                let swiftyJsonVar = JSON(responseData.result.value!)
+                let results = swiftyJsonVar["results"]
+                let filmes = Mapper<Filme>().mapArray(JSONString: results.description)
+                //print(swiftyJsonVar)
+                completionHandler(filmes,nil)
+            }
+            else{
+                //TODO: alert
+                let alerta = "Tente Novamente"
+            }
+        }
+    }
+    
+    func getTotalFilmes(completionHandler: @escaping (Int?,Error?) -> Void)
     {
         
         let parameters = [
@@ -30,10 +54,10 @@ class Service: NSObject {
         Alamofire.request(urlFilmes, method: .get, parameters: parameters).responseJSON { (responseData) -> Void in
             if((responseData.result.value) != nil) {
                 let swiftyJsonVar = JSON(responseData.result.value!)
-                let results = swiftyJsonVar["results"]
-                let filmes = Mapper<Filme>().mapArray(JSONString: results.description)
+                let totalResults = swiftyJsonVar["total_results"]
+                //let filmes = Mapper<Filme>().mapArray(JSONString: results.description)
                 //print(swiftyJsonVar)
-                completionHandler(filmes,nil)
+                completionHandler(totalResults.intValue,nil)
             }
             else{
                 //TODO: alert

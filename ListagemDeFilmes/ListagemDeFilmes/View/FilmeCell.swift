@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AlamofireImage
 
 class FilmeCell: UITableViewCell {
    
@@ -24,7 +25,9 @@ class FilmeCell: UITableViewCell {
             lblRating?.text = filmeViewModel.rating
             lblOverview?.text = filmeViewModel.overview
             lblYear?.text = filmeViewModel.ano
-            imgPoster?.image = filmeViewModel.image
+            if let imageURL = URL(string: filmeViewModel.imageURL), let placeholder = UIImage(named: "notAvailable") {
+                 imgPoster.af_setImage(withURL: imageURL, placeholderImage: placeholder)
+            }
             
         }
         
