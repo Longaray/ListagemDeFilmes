@@ -15,8 +15,9 @@ struct FilmeViewModel
     let rating:String
     let ano:String
     let overview:String
-    let imageURL:String
-         
+    let imagePosterURL:String
+    let imageBackDropURL:String
+    
     init(filme: Filme)
     {
         self.titulo = filme.title ?? ""
@@ -32,6 +33,7 @@ struct FilmeViewModel
         self.overview = filme.overview ?? ""
         
         let urlPath = "https://image.tmdb.org/t/p/w500"
-        self.imageURL = (urlPath + filme.poster_path!)
+        self.imagePosterURL = (urlPath + filme.poster_path!)
+        self.imageBackDropURL = (urlPath + filme.backdrop_path!)
     }
 }

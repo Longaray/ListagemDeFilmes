@@ -25,7 +25,7 @@ class FilmeCell: UITableViewCell {
             lblRating?.text = filmeViewModel.rating
             lblOverview?.text = filmeViewModel.overview
             lblYear?.text = filmeViewModel.ano
-            if let imageURL = URL(string: filmeViewModel.imageURL), let placeholder = UIImage(named: "notAvailable") {
+            if let imageURL = URL(string: filmeViewModel.imagePosterURL), let placeholder = UIImage(named: "notAvailable") {
                  imgPoster.af_setImage(withURL: imageURL, placeholderImage: placeholder)
             }
             

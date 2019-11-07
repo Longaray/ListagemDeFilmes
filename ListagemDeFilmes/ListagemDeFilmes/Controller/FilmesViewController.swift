@@ -13,6 +13,9 @@ class FilmesViewController : UIViewController, UITableViewDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = true
         
     }
     
@@ -22,8 +25,11 @@ class FilmesViewController : UIViewController, UITableViewDelegate
         {
             //load the controller and test the trainer name before fliping screens
             let viewController = segue.destination as! FilmesTableViewController
-            //viewController.setFilmes(filmes: self.filmesViewModels)
         }
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
     }
 }
 

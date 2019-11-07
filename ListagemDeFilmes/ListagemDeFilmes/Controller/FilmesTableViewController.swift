@@ -60,6 +60,17 @@ class FilmesTableViewController : UITableViewController, UITableViewDataSourcePr
             self.page+=1
         }
     }
+        
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
+    {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: "DetalheFilmeViewController") as! DetalheFilmeViewController
+        controller.setFilme(filme: self.filmesViewModels[indexPath.row])
+
+        self.navigationController!.pushViewController( controller, animated: true )
+        //self.present(controller, animated: true, completion: nil)
+        
+    }
     
     func isLoadingCell(for indexPath: IndexPath) -> Bool {
         return (indexPath.row >= self.filmesViewModels.count)
