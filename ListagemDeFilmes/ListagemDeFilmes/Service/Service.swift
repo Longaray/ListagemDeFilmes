@@ -13,7 +13,9 @@ import ObjectMapper
 
 class Service: NSObject {
     
-    private let urlFilmes = "https://api.themoviedb.org/3/movie/top_rated"
+    //private let urlFilmes = "https://api.themoviedb.org/3/movie/top_rated"
+
+    private let urlAPI = "https://api.themoviedb.org/3/"
 
     private let apiKey = "16fd5a2a34d2c3651edf338a920f6176"
     
@@ -27,6 +29,8 @@ class Service: NSObject {
             "language"  : "en-US",
             "page"      : page
         ]
+        
+        let urlFilmes = urlAPI + "movie/top_rated"
         
         Alamofire.request(urlFilmes, method: .get, parameters: parameters).responseJSON { (responseData) -> Void in
             if((responseData.result.value) != nil) {
@@ -51,6 +55,8 @@ class Service: NSObject {
             "language":"en-US"
         ]
         
+        let urlFilmes = urlAPI + "movie/top_rated"
+        
         Alamofire.request(urlFilmes, method: .get, parameters: parameters).responseJSON { (responseData) -> Void in
             if((responseData.result.value) != nil) {
                 let swiftyJsonVar = JSON(responseData.result.value!)
@@ -58,6 +64,30 @@ class Service: NSObject {
                 //let filmes = Mapper<Filme>().mapArray(JSONString: results.description)
                 //print(swiftyJsonVar)
                 completionHandler(totalResults.intValue,nil)
+            }
+            else{
+                //TODO: alert
+                let alerta = "Tente Novamente"
+            }
+        }
+    }
+    
+    func getImagensFilme(movieID:String, completionHandler: @escaping ([Backdrop]?,Error?) -> Void)
+    {
+        
+        let parameters = [
+            "api_key"   : apiKey
+        ]
+        
+        let urlPosters = urlAPI + String(format:"movie/%@/images", movieID)
+        
+        Alamofire.request(urlPosters, method: .get, parameters: parameters).responseJSON { (responseData) -> Void in
+            if((responseData.result.value) != nil) {
+                let swiftyJsonVar = JSON(responseData.result.value!)
+                let results = swiftyJsonVar["backdrops"]
+                let backdrops = Mapper<Backdrop>().mapArray(JSONString: results.description)
+                //print(swiftyJsonVar)
+                completionHandler(backdrops,nil)
             }
             else{
                 //TODO: alert

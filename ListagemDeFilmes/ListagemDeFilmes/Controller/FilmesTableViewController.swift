@@ -18,7 +18,8 @@ class FilmesTableViewController : UITableViewController, UITableViewDataSourcePr
     private var page = 1
     private var totalFilmes = 0
     
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
         
         if #available(iOS 10.0, *) {
@@ -31,7 +32,8 @@ class FilmesTableViewController : UITableViewController, UITableViewDataSourcePr
         self.fetchTotalFilmesData()
     }
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+    {
         //Total Filmes server
         return self.totalFilmes
     }

@@ -26,10 +26,12 @@ struct Filme: Mappable
     var original_title : String?
     var release_date: String?
     
-    init?(map: Map) {
+    init?(map: Map)
+    {
     }
     
-    mutating func mapping(map: Map) {
+    mutating func mapping(map: Map)
+    {
         
         poster_path         <- map["poster_path"]
         title               <- map["title"]

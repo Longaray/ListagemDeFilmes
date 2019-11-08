@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		25151D5FCA25527D070285B0 /* Pods_ListagemDeFilmes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 022B451AA2F8581B6175E456 /* Pods_ListagemDeFilmes.framework */; };
 		5B160A8D23743D890052D1CA /* DetalheFilmeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B160A8C23743D890052D1CA /* DetalheFilmeViewController.swift */; };
+		5B160A8F237484C70052D1CA /* FotoCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B160A8E237484C70052D1CA /* FotoCollectionViewController.swift */; };
+		5B160A91237486990052D1CA /* FotoCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B160A90237486990052D1CA /* FotoCollectionCell.swift */; };
+		5B160A93237499C10052D1CA /* Backdrop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B160A92237499C10052D1CA /* Backdrop.swift */; };
+		5B160A9523749C130052D1CA /* BackdropViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B160A9423749C130052D1CA /* BackdropViewModel.swift */; };
 		5B67EA21237300180041376A /* FilmesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B67EA20237300180041376A /* FilmesTableViewController.swift */; };
 		5BAEE1FB23721B4A00D3BE69 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAEE1FA23721B4A00D3BE69 /* AppDelegate.swift */; };
 		5BAEE1FD23721B4A00D3BE69 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAEE1FC23721B4A00D3BE69 /* SceneDelegate.swift */; };
@@ -41,6 +45,10 @@
 		40213839006E3F07B733DF8F /* Pods-ListagemDeFilmes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ListagemDeFilmes.release.xcconfig"; path = "Target Support Files/Pods-ListagemDeFilmes/Pods-ListagemDeFilmes.release.xcconfig"; sourceTree = "<group>"; };
 		50B542A980217A02ED461499 /* Pods-ListagemDeFilmesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ListagemDeFilmesTests.debug.xcconfig"; path = "Target Support Files/Pods-ListagemDeFilmesTests/Pods-ListagemDeFilmesTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5B160A8C23743D890052D1CA /* DetalheFilmeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalheFilmeViewController.swift; sourceTree = "<group>"; };
+		5B160A8E237484C70052D1CA /* FotoCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FotoCollectionViewController.swift; sourceTree = "<group>"; };
+		5B160A90237486990052D1CA /* FotoCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FotoCollectionCell.swift; sourceTree = "<group>"; };
+		5B160A92237499C10052D1CA /* Backdrop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Backdrop.swift; sourceTree = "<group>"; };
+		5B160A9423749C130052D1CA /* BackdropViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackdropViewModel.swift; sourceTree = "<group>"; };
 		5B67EA20237300180041376A /* FilmesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmesTableViewController.swift; sourceTree = "<group>"; };
 		5BAEE1F723721B4A00D3BE69 /* ListagemDeFilmes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ListagemDeFilmes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BAEE1FA23721B4A00D3BE69 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -95,6 +103,7 @@
 				5BAEE1FE23721B4A00D3BE69 /* FilmesViewController.swift */,
 				5B67EA20237300180041376A /* FilmesTableViewController.swift */,
 				5B160A8C23743D890052D1CA /* DetalheFilmeViewController.swift */,
+				5B160A8E237484C70052D1CA /* FotoCollectionViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -148,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				5BAEE2202372213900D3BE69 /* Filme.swift */,
+				5B160A92237499C10052D1CA /* Backdrop.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -156,6 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				5BAEE21E237220A700D3BE69 /* FilmeViewModel.swift */,
+				5B160A9423749C130052D1CA /* BackdropViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -190,6 +201,7 @@
 			isa = PBXGroup;
 			children = (
 				5BAEE2282372275D00D3BE69 /* FilmeCell.swift */,
+				5B160A90237486990052D1CA /* FotoCollectionCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -376,11 +388,15 @@
 				5BAEE21F237220A700D3BE69 /* FilmeViewModel.swift in Sources */,
 				5B67EA21237300180041376A /* FilmesTableViewController.swift in Sources */,
 				5BAEE1FF23721B4A00D3BE69 /* FilmesViewController.swift in Sources */,
+				5B160A93237499C10052D1CA /* Backdrop.swift in Sources */,
+				5B160A9523749C130052D1CA /* BackdropViewModel.swift in Sources */,
 				5BAEE2212372213900D3BE69 /* Filme.swift in Sources */,
+				5B160A8F237484C70052D1CA /* FotoCollectionViewController.swift in Sources */,
 				5BAEE1FB23721B4A00D3BE69 /* AppDelegate.swift in Sources */,
 				5BAEE2292372275D00D3BE69 /* FilmeCell.swift in Sources */,
 				5BAEE1FD23721B4A00D3BE69 /* SceneDelegate.swift in Sources */,
 				5BAEE226237224FE00D3BE69 /* Service.swift in Sources */,
+				5B160A91237486990052D1CA /* FotoCollectionCell.swift in Sources */,
 				5B160A8D23743D890052D1CA /* DetalheFilmeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

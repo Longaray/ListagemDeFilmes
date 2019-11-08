@@ -29,12 +29,10 @@ class DetalheFilmeViewController : UIViewController, UITableViewControllerDelega
 
     }
     
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
-        
-        //[self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
-        //self.navigationController.navigationBar.shadowImage = [UIImage new];
-        
+              
         lblTitulo?.text = self.filmeViewModel.titulo
         lblDuracao?.text = "Duracāo 2H30Min"
         lblRating?.text = self.filmeViewModel.rating
