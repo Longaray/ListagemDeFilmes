@@ -58,6 +58,16 @@ class DetalheFilmeViewController : UIViewController, UITableViewControllerDelega
         // Dispose of any resources that can be recreated.
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == "backdropCollectionSegue")
+        {
+            let viewController = segue.destination as! FotoCollectionViewController
+            viewController.setFilmeID(filmeID: self.filmeViewModel.filmeID)
+        }
+        
+    }
+
+    
     func setFilme( filme: FilmeViewModel)
     {
         self.filmeViewModel = filme

@@ -17,9 +17,11 @@ struct FilmeViewModel
     let overview:String
     let imagePosterURL:String
     let imageBackDropURL:String
+    let filmeID:String
     
     init(filme: Filme)
     {
+        self.filmeID = String(filme.id)
         self.titulo = filme.title ?? ""
         self.rating = String(format: "%.1f", filme.vote_average)
         if let stringAno = filme.release_date

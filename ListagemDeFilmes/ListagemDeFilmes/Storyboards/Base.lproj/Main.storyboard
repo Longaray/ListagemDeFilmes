@@ -229,7 +229,7 @@
                                 <rect key="frame" x="0.0" y="486" width="414" height="193"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <connections>
-                                    <segue destination="UxU-gt-zo6" kind="embed" id="QWc-mw-Njj"/>
+                                    <segue destination="UxU-gt-zo6" kind="embed" identifier="backdropCollectionSegue" id="QWc-mw-Njj"/>
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EGK-1a-X0t">

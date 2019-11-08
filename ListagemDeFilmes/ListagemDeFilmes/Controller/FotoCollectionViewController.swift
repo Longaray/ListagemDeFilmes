@@ -9,7 +9,7 @@
 import UIKit
 
 protocol FotoCollectionViewControllerDelegate{
-    func setFilmeID(filmeID: Int)
+    func setFilmeID(filmeID: String)
 }
 
 class FotoCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout, FotoCollectionViewControllerDelegate
@@ -18,7 +18,7 @@ class FotoCollectionViewController: UICollectionViewController, UICollectionView
     //@IBOutlet weak var pgFotoCollection:UIPageControl!
     
     private var backdropViewModel = [BackdropViewModel]()
-    private var filmeID = 0
+    private var filmeID: String = ""
     let service = Service()
     var maxFotos = 10
     
@@ -28,7 +28,7 @@ class FotoCollectionViewController: UICollectionViewController, UICollectionView
         self.fetchImagens()
     }
     
-    func setFilmeID(filmeID: Int)
+    func setFilmeID(filmeID: String)
     {
         self.filmeID = filmeID
     }
@@ -43,7 +43,6 @@ class FotoCollectionViewController: UICollectionViewController, UICollectionView
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FotoCollectionCell", for: indexPath) as! FotoCollectionCell
         if ( self.backdropViewModel.count > 0)
         {
-            //cell.imgCollection.image = UIImage(named: "notAvailable")
             let backdropViewModel = self.backdropViewModel[indexPath.row]
             cell.backdropViewModel = backdropViewModel
             
@@ -65,7 +64,7 @@ class FotoCollectionViewController: UICollectionViewController, UICollectionView
     
     func fetchImagens()
     {
-        self.service.getImagensFilme(movieID: "238", completionHandler: {imagens,error  in
+        self.service.getImagensFilme(movieID: self.filmeID, completionHandler: {imagens,error  in
             guard error == nil else {
                 return
             }
