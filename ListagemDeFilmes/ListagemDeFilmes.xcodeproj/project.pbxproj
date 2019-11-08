@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		25151D5FCA25527D070285B0 /* Pods_ListagemDeFilmes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 022B451AA2F8581B6175E456 /* Pods_ListagemDeFilmes.framework */; };
+		5B15516B23758D9B00B71F1A /* ElencoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B15516A23758D9B00B71F1A /* ElencoViewController.swift */; };
+		5B15516D2375908700B71F1A /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B15516C2375908700B71F1A /* Person.swift */; };
+		5B15516F2375923300B71F1A /* PersonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B15516E2375923300B71F1A /* PersonViewModel.swift */; };
+		5B1551712375985500B71F1A /* ElencoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1551702375985500B71F1A /* ElencoCell.swift */; };
 		5B160A8D23743D890052D1CA /* DetalheFilmeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B160A8C23743D890052D1CA /* DetalheFilmeViewController.swift */; };
 		5B160A8F237484C70052D1CA /* FotoCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B160A8E237484C70052D1CA /* FotoCollectionViewController.swift */; };
 		5B160A91237486990052D1CA /* FotoCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B160A90237486990052D1CA /* FotoCollectionCell.swift */; };
@@ -44,6 +48,10 @@
 		336BA8E14705773A72755A95 /* Pods-ListagemDeFilmes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ListagemDeFilmes.debug.xcconfig"; path = "Target Support Files/Pods-ListagemDeFilmes/Pods-ListagemDeFilmes.debug.xcconfig"; sourceTree = "<group>"; };
 		40213839006E3F07B733DF8F /* Pods-ListagemDeFilmes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ListagemDeFilmes.release.xcconfig"; path = "Target Support Files/Pods-ListagemDeFilmes/Pods-ListagemDeFilmes.release.xcconfig"; sourceTree = "<group>"; };
 		50B542A980217A02ED461499 /* Pods-ListagemDeFilmesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ListagemDeFilmesTests.debug.xcconfig"; path = "Target Support Files/Pods-ListagemDeFilmesTests/Pods-ListagemDeFilmesTests.debug.xcconfig"; sourceTree = "<group>"; };
+		5B15516A23758D9B00B71F1A /* ElencoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElencoViewController.swift; sourceTree = "<group>"; };
+		5B15516C2375908700B71F1A /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		5B15516E2375923300B71F1A /* PersonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonViewModel.swift; sourceTree = "<group>"; };
+		5B1551702375985500B71F1A /* ElencoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElencoCell.swift; sourceTree = "<group>"; };
 		5B160A8C23743D890052D1CA /* DetalheFilmeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalheFilmeViewController.swift; sourceTree = "<group>"; };
 		5B160A8E237484C70052D1CA /* FotoCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FotoCollectionViewController.swift; sourceTree = "<group>"; };
 		5B160A90237486990052D1CA /* FotoCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FotoCollectionCell.swift; sourceTree = "<group>"; };
@@ -104,6 +112,7 @@
 				5B67EA20237300180041376A /* FilmesTableViewController.swift */,
 				5B160A8C23743D890052D1CA /* DetalheFilmeViewController.swift */,
 				5B160A8E237484C70052D1CA /* FotoCollectionViewController.swift */,
+				5B15516A23758D9B00B71F1A /* ElencoViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -158,6 +167,7 @@
 			children = (
 				5BAEE2202372213900D3BE69 /* Filme.swift */,
 				5B160A92237499C10052D1CA /* Backdrop.swift */,
+				5B15516C2375908700B71F1A /* Person.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -167,6 +177,7 @@
 			children = (
 				5BAEE21E237220A700D3BE69 /* FilmeViewModel.swift */,
 				5B160A9423749C130052D1CA /* BackdropViewModel.swift */,
+				5B15516E2375923300B71F1A /* PersonViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -201,6 +212,7 @@
 			isa = PBXGroup;
 			children = (
 				5BAEE2282372275D00D3BE69 /* FilmeCell.swift */,
+				5B1551702375985500B71F1A /* ElencoCell.swift */,
 				5B160A90237486990052D1CA /* FotoCollectionCell.swift */,
 			);
 			path = View;
@@ -385,15 +397,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B15516D2375908700B71F1A /* Person.swift in Sources */,
 				5BAEE21F237220A700D3BE69 /* FilmeViewModel.swift in Sources */,
 				5B67EA21237300180041376A /* FilmesTableViewController.swift in Sources */,
+				5B15516F2375923300B71F1A /* PersonViewModel.swift in Sources */,
 				5BAEE1FF23721B4A00D3BE69 /* FilmesViewController.swift in Sources */,
 				5B160A93237499C10052D1CA /* Backdrop.swift in Sources */,
 				5B160A9523749C130052D1CA /* BackdropViewModel.swift in Sources */,
 				5BAEE2212372213900D3BE69 /* Filme.swift in Sources */,
 				5B160A8F237484C70052D1CA /* FotoCollectionViewController.swift in Sources */,
 				5BAEE1FB23721B4A00D3BE69 /* AppDelegate.swift in Sources */,
+				5B15516B23758D9B00B71F1A /* ElencoViewController.swift in Sources */,
 				5BAEE2292372275D00D3BE69 /* FilmeCell.swift in Sources */,
+				5B1551712375985500B71F1A /* ElencoCell.swift in Sources */,
 				5BAEE1FD23721B4A00D3BE69 /* SceneDelegate.swift in Sources */,
 				5BAEE226237224FE00D3BE69 /* Service.swift in Sources */,
 				5B160A91237486990052D1CA /* FotoCollectionCell.swift in Sources */,

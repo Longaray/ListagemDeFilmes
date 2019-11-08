@@ -44,9 +44,6 @@ class DetalheFilmeViewController : UIViewController, UITableViewControllerDelega
              imgBackground.af_setImage(withURL: imageURL, placeholderImage: placeholder)
         }
         imgPoster.layer.borderColor = UIColor.green.cgColor
-        //Container
-
-
     }
     
     @IBAction func backButton(_ sender: Any) {
@@ -64,7 +61,11 @@ class DetalheFilmeViewController : UIViewController, UITableViewControllerDelega
             let viewController = segue.destination as! FotoCollectionViewController
             viewController.setFilmeID(filmeID: self.filmeViewModel.filmeID)
         }
-        
+        else if (segue.identifier == "castCollectionSegue")
+        {
+            let viewController = segue.destination as! ElencoViewController
+            viewController.setFilmeID(filmeID: self.filmeViewModel.filmeID)
+        }
     }
 
     

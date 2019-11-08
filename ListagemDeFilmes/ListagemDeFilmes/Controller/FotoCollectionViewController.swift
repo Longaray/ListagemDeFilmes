@@ -14,9 +14,6 @@ protocol FotoCollectionViewControllerDelegate{
 
 class FotoCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout, FotoCollectionViewControllerDelegate
 {
- 
-    //@IBOutlet weak var pgFotoCollection:UIPageControl!
-    
     private var backdropViewModel = [BackdropViewModel]()
     private var filmeID: String = ""
     let service = Service()
@@ -56,12 +53,7 @@ class FotoCollectionViewController: UICollectionViewController, UICollectionView
     {
         return CGSize(width: view.frame.width, height: view.frame.height)
     }
-    
-    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath)
-    {
-
-    }
-    
+        
     func fetchImagens()
     {
         self.service.getImagensFilme(movieID: self.filmeID, completionHandler: {imagens,error  in
@@ -73,7 +65,4 @@ class FotoCollectionViewController: UICollectionViewController, UICollectionView
             self.collectionView.reloadData()
         })
     }
-    
-    
-
 }

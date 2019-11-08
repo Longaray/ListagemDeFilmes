@@ -20,7 +20,6 @@ class FotoCollectionCell: UICollectionViewCell {
             if let imageURL = URL(string: backdropViewModel.imageBackDropURL), let placeholder = UIImage(named: "notAvailable") {
                  imgCollection.af_setImage(withURL: imageURL, placeholderImage: placeholder)
             }
-            
         }
         
     }

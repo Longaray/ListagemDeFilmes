@@ -96,4 +96,27 @@ class Service: NSObject {
         }
     }
     
+    func getElencoFilme(movieID:String, completionHandler: @escaping ([Person]?,Error?) -> Void)
+    {
+        
+        let parameters = [
+            "api_key"   : apiKey
+        ]
+        
+        let urlPosters = urlAPI + String(format:"movie/%@/credits", movieID)
+        
+        Alamofire.request(urlPosters, method: .get, parameters: parameters).responseJSON { (responseData) -> Void in
+            if((responseData.result.value) != nil) {
+                let swiftyJsonVar = JSON(responseData.result.value!)
+                let results = swiftyJsonVar["cast"]
+                let cast = Mapper<Person>().mapArray(JSONString: results.description)
+                //print(swiftyJsonVar)
+                completionHandler(cast,nil)
+            }
+            else{
+                //TODO: alert
+                let alerta = "Tente Novamente"
+            }
+        }
+    }
 }
