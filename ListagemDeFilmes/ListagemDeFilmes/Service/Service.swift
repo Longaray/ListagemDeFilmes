@@ -13,8 +13,6 @@ import ObjectMapper
 
 class Service: NSObject {
     
-    //private let urlFilmes = "https://api.themoviedb.org/3/movie/top_rated"
-
     private let urlAPI = "https://api.themoviedb.org/3/"
 
     private let apiKey = "16fd5a2a34d2c3651edf338a920f6176"
@@ -40,10 +38,6 @@ class Service: NSObject {
                 //print(swiftyJsonVar)
                 completionHandler(filmes,nil)
             }
-            else{
-                //TODO: alert
-                let alerta = "Tente Novamente"
-            }
         }
     }
     
@@ -61,13 +55,7 @@ class Service: NSObject {
             if((responseData.result.value) != nil) {
                 let swiftyJsonVar = JSON(responseData.result.value!)
                 let totalResults = swiftyJsonVar["total_results"]
-                //let filmes = Mapper<Filme>().mapArray(JSONString: results.description)
-                //print(swiftyJsonVar)
                 completionHandler(totalResults.intValue,nil)
-            }
-            else{
-                //TODO: alert
-                let alerta = "Tente Novamente"
             }
         }
     }
@@ -89,10 +77,6 @@ class Service: NSObject {
                 //print(swiftyJsonVar)
                 completionHandler(backdrops,nil)
             }
-            else{
-                //TODO: alert
-                let alerta = "Tente Novamente"
-            }
         }
     }
     
@@ -111,10 +95,6 @@ class Service: NSObject {
                 let runtime = swiftyJsonVar["runtime"]
                 //print(swiftyJsonVar)
                 completionHandler(runtime.stringValue,nil)
-            }
-            else{
-                //TODO: alert
-                let alerta = "Tente Novamente"
             }
         }
     }
@@ -136,10 +116,8 @@ class Service: NSObject {
                 //print(swiftyJsonVar)
                 completionHandler(cast,nil)
             }
-            else{
-                //TODO: alert
-                let alerta = "Tente Novamente"
-            }
         }
     }
+    
+    
 }
