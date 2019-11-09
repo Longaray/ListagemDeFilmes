@@ -303,7 +303,7 @@
         <scene sceneID="0AE-lI-v19">
             <objects>
                 <collectionViewController id="iPj-A5-OPo" customClass="ElencoViewController" customModule="ListagemDeFilmes" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="prototypes" id="9hQ-Y5-erC">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" pagingEnabled="YES" dataMode="prototypes" id="9hQ-Y5-erC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="270"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -315,15 +315,14 @@
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="ElencoCell" id="eHQ-ue-aOQ" customClass="ElencoCell" customModule="ListagemDeFilmes" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="126" width="200" height="171"/>
+                                <rect key="frame" x="0.0" y="50" width="200" height="171"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="hga-Kb-6Em">
                                     <rect key="frame" x="0.0" y="0.0" width="200" height="171"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ri-YP-J6h">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ri-YP-J6h">
                                             <rect key="frame" x="24" y="97" width="150" height="24"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
@@ -340,6 +339,12 @@
                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         </imageView>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="wDC-gG-eZX" firstAttribute="top" secondItem="1ri-YP-J6h" secondAttribute="bottom" constant="1" id="UQp-fa-btQ"/>
+                                        <constraint firstItem="1ri-YP-J6h" firstAttribute="leading" secondItem="wDC-gG-eZX" secondAttribute="leading" id="tLi-yn-apU"/>
+                                        <constraint firstItem="1ri-YP-J6h" firstAttribute="top" secondItem="8Ve-hq-5Mz" secondAttribute="bottom" constant="5" id="uuv-gI-3Jb"/>
+                                        <constraint firstItem="1ri-YP-J6h" firstAttribute="trailing" secondItem="wDC-gG-eZX" secondAttribute="trailing" id="v33-4H-d6f"/>
+                                    </constraints>
                                 </collectionViewCellContentView>
                                 <size key="customSize" width="200" height="171"/>
                                 <connections>
