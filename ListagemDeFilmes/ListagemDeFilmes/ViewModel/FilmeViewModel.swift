@@ -38,4 +38,14 @@ struct FilmeViewModel
         self.imagePosterURL = (urlPath + filme.poster_path!)
         self.imageBackDropURL = (urlPath + filme.backdrop_path!)
     }
+    
+    func getDuracaoHora(duracao: String) -> String
+    {
+        var duracaoHoras = ""
+        if let duracaoInt  = Int(duracao)
+        {
+            duracaoHoras = String(format: "Duracao %ih %imin", (duracaoInt / 60), (duracaoInt % 60))
+        }
+        return  duracaoHoras
+    }
 }

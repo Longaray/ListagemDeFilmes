@@ -24,7 +24,8 @@ class DetalheFilmeViewController : UIViewController, UITableViewControllerDelega
     
     var delegate:UITableViewControllerDelegate?
     var filmeViewModel: FilmeViewModel!
-
+    let service = Service()
+    
     func exitScreen() {
 
     }
@@ -32,9 +33,10 @@ class DetalheFilmeViewController : UIViewController, UITableViewControllerDelega
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        self.fetchDuracao()
               
         lblTitulo?.text = self.filmeViewModel.titulo
-        lblDuracao?.text = "Duracāo 2H30Min"
+        //lblDuracao?.text = "Duracāo 2H30Min"
         lblRating?.text = self.filmeViewModel.rating
         txtOverview?.text = self.filmeViewModel.overview
         if let imageURL = URL(string: filmeViewModel.imagePosterURL), let placeholder = UIImage(named: "notAvailable") {
@@ -72,6 +74,21 @@ class DetalheFilmeViewController : UIViewController, UITableViewControllerDelega
     func setFilme( filme: FilmeViewModel)
     {
         self.filmeViewModel = filme
+    }
+    
+    func fetchDuracao()
+    {
+        if (self.filmeViewModel != nil)
+        {
+            self.service.getDuracaoFilme(movieID: self.filmeViewModel.filmeID, completionHandler: {duracao,error  in
+                guard error == nil else {
+                    return
+                }
+                self.lblDuracao?.text = self.filmeViewModel.getDuracaoHora(duracao: duracao!)
+                //print(filmes)
+               
+            })
+        }
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {

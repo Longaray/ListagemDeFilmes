@@ -96,6 +96,29 @@ class Service: NSObject {
         }
     }
     
+    func getDuracaoFilme(movieID:String, completionHandler: @escaping (String?,Error?) -> Void)
+    {
+        
+        let parameters = [
+            "api_key"   : apiKey
+        ]
+        
+        let urlDetail = urlAPI + String(format:"movie/%@", movieID)
+        
+        Alamofire.request(urlDetail, method: .get, parameters: parameters).responseJSON { (responseData) -> Void in
+            if((responseData.result.value) != nil) {
+                let swiftyJsonVar = JSON(responseData.result.value!)
+                let runtime = swiftyJsonVar["runtime"]
+                //print(swiftyJsonVar)
+                completionHandler(runtime.stringValue,nil)
+            }
+            else{
+                //TODO: alert
+                let alerta = "Tente Novamente"
+            }
+        }
+    }
+    
     func getElencoFilme(movieID:String, completionHandler: @escaping ([Person]?,Error?) -> Void)
     {
         
